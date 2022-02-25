@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>application</title>
+    <style>
+        body { font: 14px  arial; 
+       padding: 0;
+       margin:0;
+       
+   }
+     h1, h2, h3, h4, h5, h6 { font-family: Geneva, Arial, Helvetica, sans-serif; margin-top: 0px;}
+  .responsive_form{
+      width:100%;
+      height:100%;
+      display:flex;
+      justify-content: center;
+  }
+  .form_size{
+    width:70%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    background-color:#F7F9F9 ;
+    box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  }
+  .form_details{
+padding:10px;
+  }
+  .personal{
+    background-color:#E8F8F5;
+     box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  }
+  .address{
+    background-color:#EBDEF0 ;
+     box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  }
+  .contect{
+    background-color: #FBEEE6;
+     box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  }
+  .document_no{
+    background-color: #D7DBDD;
+     box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+     text-align: center;
+  }
+  .bank_details{
+    background-color:#FEF9E7;
+     box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  }
+  .upload{
+    background-color:#E8DAEF;
+     box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  }
+  .user{
+    background-color:#FADBD8;
+    box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  .button{
+    height:100px;
+  }
+  @media(max-width:720px){
+    .form_size{
+        margin-top: -40px;
+    }
+
+}
+
+@media(max-width:400px){
+    .form_details input{
+        width: 100%;
+         background-color: white;
+    }
+    .form_size{
+        margin-top: -70px;
+        font-size:12px;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <div class="responsive_nav">
+     <div class="navigation">
+         <a href="index.html">HOME</a>
+         <a>ABOUT</a>
+         <a>SERVICE</a>
+         <a>MEMBERS</a>
+         <a>MANAGEMENT</a>
+         <button onclick="memberlogin()"style="font-size:12px;height:25px;background-color:#16A085 ;">MEMBER LOGIN</button>
+     </div>
+
+ </div>
+ <div class="responsive_name">
+     <div class="name">
+        <img src="image/screnshoot.jpg">
+     </div>
+ </div>
+<div class="responsive_form">
+    <div class="form_size">
+  <form class="form_details"action="insertapplicationdata.php"method="POST"enctype="multipart/form-data">
+    <h1 style="text-align:center;color:green;padding:10px;"> APPLICATION FORM</h1>
+    <div class="personal">
+         NAME:<input type="text" name="name"placeholder="APPLICANT NAME"size="40%"><br><br>
+         FATHER NAME:<input type="text" name="fname"placeholder="FATHER NAME NAME"size="40%"><br><br>
+         MOTHER NAME:<input type="text" name="mname"placeholder="MOTHER NAME"size="40%"><br><br>
+    </div><br>
+    <div class="address">
+        ADDRESS:<br><br>
+        STATE:<input type="text" name="state"placeholder="STATE"><span> DISTRIC:<input type="text" name="distric"placeholder="DISTRIc"></span><br><br>
+        VILLAGE:<input type="text" name="village"placeholder="VILLAGE"><span> POST OFFICE:<input type="text" name="postoffice"placeholder="POST OFFICE"></span><br><br>
+        POLICE STATION:<input type="text" name="pstation"placeholder="POLICE STATION"><span> PIN CODE:<input type="int" name="pincode"placeholder="PIN CODE"></span><br><br>
+    </div><br>
+    <div class="contect">
+       MOBILE NUMBER:<input type="int" name="mobile"placeholder="MOBILE NUMBER"size="40%"><br><br>
+     EMAIL ADDRESS:<input type="text" name="email"placeholder="EMAIL ADDRESS"size="40%"><br><br>
+    </div><br>
+    <div class="document_no">
+        ADHAR NO:<input type="int" name="adharno"placeholder="ADHAR NUMBER"><span> VOTER ID NO:<input type="text" name="voter"placeholder="VOTER ID NO"></span><br><br>
+    </div><br>
+    <div class="bank_details">
+         ACCOUNT NO:<input type="int" name="account"placeholder="ACCOUNT NUMBER"><span> CONFORFM ACCOUNT:<input type="int" name="conformaccount"placeholder="CONFORM ACCOUNT"></span><br><br>
+          IFSC CODE:<input type="text" name="ifsc"placeholder="IFSC CODE NO"><br><br>
+          NAME AS FAR ACCOUNT:<input type="text" name="name_account"placeholder="NAME AS FAR ACCOUNT"><br><br>
+    </div><br>
+    <div class="user">
+        USERNAME:<input type="text" name="user"size="20"placeholder="USERNAME"id="user"><span> PASSWORD:<input type="password"name="pass"size="20"placeholder="PASSWORD"id="password"></span><br><br>
+    </div><br>
+    <div class="upload">
+          ADHAR IMAGE:<input type="file" name="adrimage"id="adharimage"><br><br>
+          VOTER IMAGE:<input type="file" name="votrimage"id="voterimage"><br><br>
+          POHOTOGRAPH:<input type="file" name="photo"id="photograph"><br><br> 
+          SIGNATURE:<input type="file" name="signature"id="signature"><br><br><br><br>
+<div class="declaration">
+    <p> I declar all of my best knowledge avobe all of my details is right ans true </p>
+</div>
+          <div class="button" style="text-align:center;color:green;" onclick="validation()"> <input type="submit"name="submit"value="SUBMIT"></div>
+    </div>
+    
+  </form>
+</div>
+</div>
+<footer class="responsive_footer">
+    <div class="footer_size">
+            <div class="content">
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+         </div>
+         <div class="content">
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <div class="author">
+             <p>DESIGN AND DEVELOPED BY</p>
+             <p>JABED HUSSAIN BARBHUIYA</p>
+         </div>
+         </div>
+         <div class="content">
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+            <li>ABOUT</li>
+         </div>
+    </div>
+ </footer>
+</body>
+</html>
